@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+	
+
+        <act_window id="ordenadores_ordenador_action" name="ordenadores"
+                     res_model="ordenadores.ordenador" />
+       
+
+        <record id="ordenadores_ordenador_list_view" model="ir.ui.view">
+            <field name="name">ordenadores_ordenador_view_tree</field>
+            <field name="model">ordenadores.ordenador</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="nomPc"/>
+                    <field name="typePc"/>
+                    <field name="precio"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="ordenadores_ordenador_view_form" model="ir.ui.view">
+            <field name="name">ordenadores_ordenador_view_form</field>
+            <field name="model">ordenadores.ordenador</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name"/>
+                        <field name="nomPc"/>
+                        <field name="typePc"/>
+		                <field name="precio"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="ordenadores_ordenador_view_search" model="ir.ui.view">
+            <field name="name">ordenadores_ordenador_view_search</field>
+            <field name="model">ordenadores.ordenador</field>
+            <field name="arch" type="xml">
+                <search>
+                        <field name="name"/>
+                        <field name="nomPc"/>
+                        <field name="typePc"/>
+		                <field name="precio"/>
+                </search>
+            </field>
+        </record>
+	    <menuitem name="Ordenadores" id="menu_pc" sequence="10" />
+        <menuitem name="Inicio" id="menu_inicio" parent="menu_pc" sequence="10"/>
+        <menuitem name="Ordenador" id="menu_pcs" action="ordenadores_ordenador_action" parent="menu_inicio" sequence="10"/>
+    </data>
+</odoo>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="ordenadores_tipos_action" name="tipos"
+                     res_model="ordenadores.tipos" />
+        <menuitem id="ordenadores_tipos_menu"
+                  name="Tipos"
+                  action="ordenadores_tipos_action"
+                  parent="menu_inicio"
+                  sequence="15" />
+
+        <record id="ordenadores_tipos_view_tree" model="ir.ui.view">
+            <field name="name">Tipos</field>
+            <field name="model">ordenadores.tipos</field>
+            <field name="arch" type="xml">
+                <tree>
+                        <field name="codTip" />
+                        <field name="nomTip" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="ordenadores_tipos_view_form" model="ir.ui.view">
+            <field name="name">Formulario de Tipos</field>
+            <field name="model">ordenadores.tipos</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="codTip" />
+                        <field name="nomTip" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="ordenadores_tipos_view_search" model="ir.ui.view">
+            <field name="name">Busqueda de Tipos</field>
+            <field name="model">ordenadores.tipos</field>
+            <field name="arch" type="xml">
+                <search>
+                        <field name="codTip" />
+                        <field name="nomTip" />
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>
